@@ -21,14 +21,14 @@ int Gi 1
  end
 ```
 
-## 4. Create password-file
+## 4. Create a password file
 
 e.g.
 ```
 echo sanfran:cisco > password 
 ```
 
-## 3. Telnet and run commands
+## 5. Telnet and run commands
 
 e.g.
 ```
