@@ -32,12 +32,12 @@ echo sanfran:cisco > password
 
 e.g.
 ```
-echo show ver | tarc.py 192.168.33.100 password
+echo show ver | ./tarc.py 192.168.33.100 password
 ```
 
 e.g.
 ```
-cat << EOS | tarc.py 192.168.33.100 password
+cat << EOS | ./tarc.py 192.168.33.100 password
 show ver
 show int status
 show run
