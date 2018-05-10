@@ -1,12 +1,7 @@
 # tarc
 Telnet and run commands
 
-## 1. Download a router image from cisco.com
-- Cloud Services Router 1000V (csr1000v-universalk9.03.11.00.S.154-1.S-std-2.iso)
-
-## 2. Start the router on VirtualBox
-
-## 3. Allow telnet connection to router
+## 1. Allow telnet connection to router
 
 e.g.
 ```
@@ -21,14 +16,14 @@ int Gi 1
  end
 ```
 
-## 4. Create a password file
+## 2. Create a password file
 
 e.g.
 ```
 echo sanfran:cisco > password 
 ```
 
-## 5. Telnet and run commands
+## 3. Telnet and run commands
 
 e.g.
 ```
