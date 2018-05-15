@@ -16,23 +16,23 @@ int Gi 1
  end
 ```
 
-## 2. Create a password file
+## 2. Set password
 
 e.g.
 ```
-echo sanfran:cisco > password 
+export TARC_PASSWORD=sanfran:cisco
 ```
 
 ## 3. Telnet and run commands
 
 e.g.
 ```
-echo show ver | ./tarc.py 192.168.33.100 password
+echo show ver | ./tarc.py 192.168.33.100
 ```
 
 e.g.
 ```
-cat << EOS | ./tarc.py 192.168.33.100 password
+cat << EOS | ./tarc.py 192.168.33.100
 show ver
 show int status
 show run
