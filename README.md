@@ -32,10 +32,10 @@ echo show ver | ./tarc.py 192.168.33.100
 
 e.g.
 ```
-cat << EOS | ./tarc.py 192.168.33.100
+cat <<EOF | ./tarc.py 192.168.33.100
 show ver
 show int status
 show run
-EOS
+EOF
 ```
 
