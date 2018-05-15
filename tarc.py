@@ -14,10 +14,7 @@ import telnetlib
 
 hostname = sys.argv[1]
 
-passwordfile = os.path.expanduser(sys.argv[2])
-with open(passwordfile) as file:
-    account = file.readline()
-    accounts = account.rsplit(":")
+accounts = os.environ.get('TARC_PASSWORD')
 username = accounts[0].rstrip()
 password = accounts[1].rstrip()
 
@@ -68,4 +65,3 @@ tn.write(EXIT + '\n')
 
 # Display result
 print tn.read_all()
-
