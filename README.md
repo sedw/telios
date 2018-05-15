@@ -16,7 +16,7 @@ int Gi 1
  end
 ```
 
-## 2. Set password
+## 2. Set password to environment variable
 
 e.g.
 ```
