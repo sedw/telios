@@ -9,7 +9,7 @@ conf t
 username sanfran privilege 15 password cisco
 line vty 0 15
  login local
- tranport input telnet
+ transport input telnet
 int Gi 1
  ip address 192.168.33.100
  no shut
