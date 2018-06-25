@@ -12,14 +12,12 @@ import telnetlib
 # Telnet client setting
 ################################################################################
 
-hostname = sys.argv[1]
-
-accounts = os.environ['TARC_PASSWORD'].split(":")
-username = accounts[0].rstrip()
-password = accounts[1].rstrip()
-
 TCPPORT = 23
 TIMEOUT = 5
+
+host = sys.argv[1]
+user = os.environ['TARC_USER']
+password = os.environ['TARC_PASSWORD']
 
 
 ################################################################################
@@ -30,10 +28,9 @@ USER_PROMPT = b'Username:'
 PASSWORD_PROMPT = b'Password:'
 EXEC_PROMPT = b"#"
 NOPAGER = b'terminal length 0'
+EXIT = b'exit'
 
 commands = sys.stdin
-
-EXIT = b'exit'
 
 
 ################################################################################
@@ -41,11 +38,11 @@ EXIT = b'exit'
 ################################################################################
 
 # Start Telnet
-tn = telnetlib.Telnet(hostname, TCPPORT, TIMEOUT)
+tn = telnetlib.Telnet(host, TCPPORT, TIMEOUT)
 
 # Login
 tn.read_until(USER_PROMPT)
-tn.write(username.encode('ascii') + b'\n')
+tn.write(user.encode('ascii') + b'\n')
 tn.read_until(PASSWORD_PROMPT)
 tn.write(password.encode('ascii') + b'\n')
 tn.read_until(EXEC_PROMPT)
