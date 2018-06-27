@@ -24,11 +24,11 @@ password = os.environ['TARC_PASSWORD']
 # Cisco IOS commands
 ################################################################################
 
-USER_PROMPT = b'Username:'
-PASSWORD_PROMPT = b'Password:'
+USER_PROMPT = b"Username:"
+PASSWORD_PROMPT = b"Password:"
 EXEC_PROMPT = b"#"
-NOPAGER = b'terminal length 0'
-EXIT = b'exit'
+NOPAGER = b"terminal length 0"
+EXIT = b"exit"
 
 commands = sys.stdin
 
@@ -42,23 +42,23 @@ tn = telnetlib.Telnet(host, TCPPORT, TIMEOUT)
 
 # Login
 tn.read_until(USER_PROMPT)
-tn.write(user.encode('ascii') + b'\n')
+tn.write(user.encode('ascii') + b"\n")
 tn.read_until(PASSWORD_PROMPT)
-tn.write(password.encode('ascii') + b'\n')
+tn.write(password.encode('ascii') + b"\n")
 tn.read_until(EXEC_PROMPT)
 
 # Do no display '-- more --'
-tn.write(NOPAGER + b'\n')
+tn.write(NOPAGER + b"\n")
 tn.read_until(EXEC_PROMPT)
 
 # If this is deleted, "#" is not displayed at the beginning of the immediately
 # following command. Is there any other good way?
-tn.write(b'\n')
+tn.write(b"\n")
 
 # Run commands
 for command in commands:
-    tn.write(command.encode('ascii') + b'\n')
-tn.write(EXIT + b'\n')
+    tn.write(command.encode('ascii') + b"\n")
+tn.write(EXIT + b"\n")
 
 # Display result
 print(tn.read_all().decode('ascii'))
