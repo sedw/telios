@@ -11,7 +11,7 @@ line vty 0 15
  login local
  transport input telnet
 int Gi 1
- ip address 192.168.33.100
+ ip address 192.168.33.100 255.255.255.0
  no shut
  end
 ```
