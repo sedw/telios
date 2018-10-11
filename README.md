@@ -2,9 +2,13 @@
 
 Cisco IOS 機器に telnet 接続し、標準入力された文字列を流し込むスクリプトです
 
-## 1. telnet サーバの設定
+## 1. Cisco IOS 機器の設定
 
-例) Cisco IOS の場合
+例)
+- ユーザ名: sanfran
+- パスワード: cisco
+- IP アドレス: 192.168.33.100/24
+- telnet ログイン可
 
 ```
 conf t
@@ -18,24 +22,22 @@ int Gi 1
  end
 ```
 
-## 2. ユーザ名とパスワードを環境変数にセット
-
-例) ユーザ名:sanfran パスワード:cisco
+## 2. 本スクリプト実行環境の環境変数に telnet ユーザ名とパスワードを設定
 
 ```
 export TARC_USERNAME=sanfran
 export TARC_PASSWORD=cisco
 ```
 
-## 3. telnet サーバに接続し、コマンドを実行する
+## 3. Cisco IOS 機器に telnet し、コマンドを実行する
 
-telnet サーバ上で show ver を実行
+show ver を実行する
 
 ```
 echo show ver | ./telios.py 192.168.33.100
 ```
 
-telnet サーバ上で 3 つのコマンドを連続で実行する
+3 つのコマンドを連続で実行する
 
 ```
 cat <<EOF | ./telios.py 192.168.33.100
