@@ -23,7 +23,7 @@ int Gi 1
 例) ユーザ名:sanfran パスワード:cisco
 
 ```
-export TARC_USER=sanfran
+export TARC_USERNAME=sanfran
 export TARC_PASSWORD=cisco
 ```
 
