@@ -1,6 +1,6 @@
-# tarc
+# telios
 
-telnet サーバに接続し、標準入力された文字列を流し込むスクリプトです
+Cisco IOS 機器に telnet 接続し、標準入力された文字列を流し込むスクリプトです
 
 ## 1. telnet サーバの設定
 
@@ -18,7 +18,7 @@ int Gi 1
  end
 ```
 
-## 2. Set password to environment variable
+## 2. ユーザ名とパスワードを環境変数にセット
 
 例) ユーザ名:sanfran パスワード:cisco
 
@@ -32,14 +32,13 @@ export TARC_PASSWORD=cisco
 telnet サーバ上で show ver を実行
 
 ```
-echo show ver | ./tarc.py 192.168.33.100
+echo show ver | ./telios.py 192.168.33.100
 ```
-
 
 telnet サーバ上で 3 つのコマンドを連続で実行する
 
 ```
-cat <<EOF | ./tarc.py 192.168.33.100
+cat <<EOF | ./telios.py 192.168.33.100
 show ver
 show int status
 show run
